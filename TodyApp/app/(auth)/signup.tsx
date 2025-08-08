@@ -42,11 +42,11 @@ export default function Login() {
       await AsyncStorage.setItem("authToken", data.token);
       console.log("Login successful:", data);
       setIsLoading(false);
-      router.push("/home");
+      //router.push("/home");
     } catch (err: any) {
       console.error("Error details:", err);
       setError(err.message || "An error occurred");
-      setIsLoading(false); // Reset loading state on error
+      setIsLoading(false); 
     }
   };
 
@@ -70,7 +70,7 @@ export default function Login() {
             value={formData.username}
             onChangeText={(text) => setFormData({ ...formData, username: text })}
             autoCapitalize="none"
-            editable={!isLoading} // Disable input during loading
+            editable={!isLoading} 
           />
         </View>
 
@@ -85,7 +85,7 @@ export default function Login() {
               placeholderTextColor="gray"
               value={formData.password}
               onChangeText={(text) => setFormData({ ...formData, password: text })}
-              editable={!isLoading} // Disable input during loading
+              editable={!isLoading} 
             />
             <TouchableOpacity
               onPress={() => setIsPasswordVisible(!isPasswordVisible)}
@@ -95,7 +95,7 @@ export default function Login() {
                 top: "50%",
                 transform: [{ translateY: -12 }],
               }}
-              disabled={isLoading} // Disable eye icon during loading
+              disabled={isLoading} 
             >
               <Ionicons
                 name={isPasswordVisible ? "eye-outline" : "eye-off-outline"}
