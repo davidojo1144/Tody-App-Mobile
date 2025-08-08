@@ -28,11 +28,18 @@ export default function welcome() {
             <View className='border border-gray-300 w-[35%] '></View>
         </View>
 
-        <View>
-            <TouchableOpacity>
+        <View className='flex flex-row gap-3 mt-10'>
+            <TouchableOpacity className='flex flex-row justify-center items-center gap-3 bg-gray-200 py-3 rounded-2xl w-[45%]'>
                 <Image
-                source={require("../assets/images/Message.png")}
+                source={require("../assets/images/facebook.png")}
                 resizeMode='contain'/>
+                <Text className='text-xl text-black font-medium'>Facebook</Text>
+            </TouchableOpacity>
+            <TouchableOpacity className='flex flex-row justify-center items-center gap-3 bg-gray-200 py-3 rounded-2xl w-[45%]'>
+                <Image
+                source={require("../assets/images/google.png")}
+                resizeMode='contain'/>
+                <Text className='text-xl text-black font-medium'>Googlek</Text>
             </TouchableOpacity>
         </View>
     </SafeAreaView>
