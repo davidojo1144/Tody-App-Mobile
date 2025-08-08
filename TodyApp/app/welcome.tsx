@@ -18,7 +18,7 @@ export default function welcome() {
         resizeMode='contain'
         />
 
-        <TouchableOpacity className='bg-teal-500 flex flex-row justify-center items-center gap-3 mx-2  py-4 rounded-2xl'>
+        <TouchableOpacity className='bg-teal-500 flex flex-row justify-center items-center gap-3 mx-2  py-4 rounded-2xl' onPress={()=> router.push("/(auth)/login")}>
             <Image
             source={require("../assets/images/Message.png")}
             resizeMode='contain'/>
