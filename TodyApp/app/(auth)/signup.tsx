@@ -1,4 +1,4 @@
-import { Text, View, TouchableOpacity, TextInput } from "react-native";
+import { Text, View, TouchableOpacity, TextInput, ActivityIndicator } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "../../global.css";
 import { useRouter } from "expo-router";
@@ -7,7 +7,7 @@ import { useState } from "react";
 import { formData } from "@/types/type";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function signup() {
+export default function Login() {
   const router = useRouter();
   const [formData, setFormData] = useState<formData>({
     username: "",
@@ -15,11 +15,12 @@ export default function signup() {
   });
   const [error, setError] = useState<string | null>(null);
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleLogin = async () => {
     try {
       setError(null);
+      setIsLoading(true);
       const response = await fetch("https://dummyjson.com/auth/login", {
         method: "POST",
         headers: {
@@ -28,7 +29,7 @@ export default function signup() {
         body: JSON.stringify({
           username: formData.username,
           password: formData.password,
-          expiresInMins: 30, 
+          expiresInMins: 30,
         }),
       });
 
@@ -38,15 +39,14 @@ export default function signup() {
         throw new Error(data.message || "Login failed");
       }
 
-      
       await AsyncStorage.setItem("authToken", data.token);
       console.log("Login successful:", data);
-
-      
-      //router.push("/home");
+      setIsLoading(false);
+      router.push("/home");
     } catch (err: any) {
       console.error("Error details:", err);
       setError(err.message || "An error occurred");
+      setIsLoading(false); // Reset loading state on error
     }
   };
 
@@ -70,6 +70,7 @@ export default function signup() {
             value={formData.username}
             onChangeText={(text) => setFormData({ ...formData, username: text })}
             autoCapitalize="none"
+            editable={!isLoading} // Disable input during loading
           />
         </View>
 
@@ -84,6 +85,7 @@ export default function signup() {
               placeholderTextColor="gray"
               value={formData.password}
               onChangeText={(text) => setFormData({ ...formData, password: text })}
+              editable={!isLoading} // Disable input during loading
             />
             <TouchableOpacity
               onPress={() => setIsPasswordVisible(!isPasswordVisible)}
@@ -93,6 +95,7 @@ export default function signup() {
                 top: "50%",
                 transform: [{ translateY: -12 }],
               }}
+              disabled={isLoading} // Disable eye icon during loading
             >
               <Ionicons
                 name={isPasswordVisible ? "eye-outline" : "eye-off-outline"}
@@ -105,10 +108,17 @@ export default function signup() {
       </View>
 
       <TouchableOpacity
-        className="bg-teal-500 py-5 rounded-2xl justify-center items-center mb-5"
+        className={`bg-teal-500 py-5 rounded-2xl justify-center items-center mb-5 ${
+          isLoading ? "opacity-50" : ""
+        }`}
         onPress={handleLogin}
+        disabled={isLoading} 
       >
-        <Text className="text-white text-xl font-medium">Log In</Text>
+        {isLoading ? (
+          <ActivityIndicator size="large" color="#ffffff" />
+        ) : (
+          <Text className="text-white text-xl font-medium">Log In</Text>
+        )}
       </TouchableOpacity>
     </SafeAreaView>
   );
