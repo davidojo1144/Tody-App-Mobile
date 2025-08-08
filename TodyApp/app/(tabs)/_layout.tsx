@@ -24,35 +24,35 @@ export default function TabsLayout() {
             <Tabs.Screen 
             name="home" 
             options={{
-            headerShown: true,
+            headerShown: false,
              tabBarIcon: ({ color, size }) => (
               <Ionicons name="home" size={size} color={color} />
             )}}/>
             <Tabs.Screen 
             name="inbox" 
             options={{
-            headerShown: true,
+            headerShown: false,
              tabBarIcon: ({ color, size }) => (
               <Ionicons name="chatbubbles" size={size} color={color} />
             )}}/>
             <Tabs.Screen 
             name="filter" 
             options={{
-            headerShown: true,
+            headerShown: false,
              tabBarIcon: ({ color, size }) => (
               <Ionicons name="filter" size={size} color={color} />
             )}}/>
             <Tabs.Screen 
             name="upcoming" 
             options={{
-            headerShown: true,
+            headerShown: false,
              tabBarIcon: ({ color, size }) => (
               <Ionicons name="calendar" size={size} color={color} />
             )}}/>
             <Tabs.Screen 
             name="project" 
             options={{
-            headerShown: true,
+            headerShown: false,
              tabBarIcon: ({ color, size }) => (
               <Ionicons name="briefcase" size={size} color={color} />
             )}}/>
