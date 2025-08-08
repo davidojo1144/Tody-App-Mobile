@@ -25,15 +25,29 @@ export default function signup() {
           />
         </View>
 
-         <View className="flex flex-col gap-3 mt-3">
-          <Text className="text-xl text-black font-medium">Password</Text>
+        <View className="flex flex-col gap-3 mt-3">
+        <Text className="text-xl text-black font-medium">Password</Text>
+        <View className="relative">
           <TextInput
             textContentType="password"
-            className="p-5 bg-gray-50 border border-gray-300 rounded-md"
+            secureTextEntry={true} 
+            className="p-5 pr-12 bg-gray-50 border border-gray-300 rounded-md" 
             placeholder="Enter your password"
             placeholderTextColor="gray"
           />
+          <Ionicons
+            name="eye-off-outline"
+            size={24}
+            color="gray" 
+            style={{
+              position: "absolute",
+              right: 12, 
+              top: "50%", 
+              transform: [{ translateY: -12 }], 
+            }}
+          />
         </View>
+      </View>
       </View>
 
       <TouchableOpacity className="bg-teal-500 py-5 rounded-2xl justify-center items-center mb-5" onPress={() => {}}>
