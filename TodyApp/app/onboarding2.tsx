@@ -1,4 +1,4 @@
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 import Swiper from "react-native-swiper";
@@ -13,6 +13,9 @@ export default function onboarding2() {
        source={require("../assets/images/Onboarding Image.png")}/>
        <Text className="text-4xl text-center text-black px-10 ">Your convenience in making a todo list</Text>
        <Text className="pt-5 text-gray-500 text-xl font-light text-center">Here's a mobile platform that helps you create task or to list so that it can help you in every job easier and faster.</Text>
+       <TouchableOpacity className="mt-10 bg-teal-500 py-5 rounded-2xl">
+        <Text>Continue</Text>
+       </TouchableOpacity>
     </SafeAreaView>
   )
 }
