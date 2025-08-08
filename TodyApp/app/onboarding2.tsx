@@ -7,8 +7,12 @@ import "../global.css";
 export default function onboarding2() {
   return (
     <SafeAreaView className="flex-1 p-5 bg-white" edges={["top", "left", "right"]}>
-      <Text className="text-teal-400 text-end text-xl font-medium pb-5">Skip</Text>
-      <Image source={require("../assets/images/Onboarding Image.png")}/>
+      <Text className="text-teal-400 text-right text-xl font-medium pb-10">Skip</Text>
+      <Image
+      resizeMode="contain"
+       source={require("../assets/images/Onboarding Image.png")}/>
+       <Text className="text-4xl text-center text-black px-10 ">Your convenience in making a todo list</Text>
+       <Text className="pt-5 text-gray-500 text-xl font-light text-center">Here's a mobile platform that helps you create task or to list so that it can help you in every job easier and faster.</Text>
     </SafeAreaView>
   )
 }
