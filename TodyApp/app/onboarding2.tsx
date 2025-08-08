@@ -20,7 +20,7 @@ export default function onboarding2() {
        source={require("../assets/images/Onboarding Image.png")}/>
        <Text className="text-4xl text-center text-black px-10 ">Your convenience in making a todo list</Text>
        <Text className="pt-5 text-gray-500 text-xl font-light text-center">Here's a mobile platform that helps you create task or to list so that it can help you in every job easier and faster.</Text>
-       <TouchableOpacity className="mt-10 bg-teal-500 py-5 rounded-2xl">
+       <TouchableOpacity className="mt-10 bg-teal-500 py-5 rounded-2xl" onPress={()=> router.push("/onboarding3")}>
         <Text className="text-white text-xl text-center">Continue</Text>
        </TouchableOpacity>
     </SafeAreaView>
