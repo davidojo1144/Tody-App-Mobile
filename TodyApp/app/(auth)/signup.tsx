@@ -15,6 +15,7 @@ export default function signup() {
   });
   const [error, setError] = useState<string | null>(null);
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true)
 
   const handleLogin = async () => {
     try {
