@@ -17,6 +17,7 @@ export default function login() {
         <View className="flex flex-col gap-3 mt-10">
           <Text className="text-xl text-black font-medium">Email Address</Text>
           <TextInput
+            textContentType="emailAddress"
             className="p-5 bg-gray-50 border border-gray-300 rounded-md"
             placeholder="name@example.com"
             placeholderTextColor="gray"
