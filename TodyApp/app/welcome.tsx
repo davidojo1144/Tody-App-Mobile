@@ -12,11 +12,14 @@ export default function welcome() {
 
         <Image
         source={require("../assets/images/welcome.png")}
+        resizeMode='contain'
         />
 
-        <TouchableOpacity>
-            <Image/>
-            <Text>Continue with email</Text>
+        <TouchableOpacity className='bg-teal-500 flex flex-row justify-center items-center gap-3 mx-2  py-4 rounded-2xl'>
+            <Image
+            source={require("../assets/images/Message.png")}
+            resizeMode='contain'/>
+            <Text className='text-xl text-white font-medium'>Continue with email</Text>
         </TouchableOpacity>
     </SafeAreaView>
   )
