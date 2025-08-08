@@ -11,7 +11,7 @@ export default function Index() {
     <SafeAreaView className="flex-1 bg-teal-600" edges={["top", "left", "right"]}>
       <Swiper
         loop={false}
-        showsPagination={true}
+        //showsPagination={true}
         renderPagination={(index, total) => (
           <View className="absolute bottom-10 w-full flex-row justify-center">
             <View className="h-2 w-2 mx-1 rounded-full bg-white" />
@@ -21,10 +21,8 @@ export default function Index() {
         )}
         onIndexChanged={(index) => {
           if (index === 1) {
-            router.replace("/onboarding2");
-          } else if (index === 2) {
-            router.replace("/onboarding3");
-          }
+            router.push("/onboarding2");
+          } return
         }}
       >
         <View className="flex-1 p-5">
