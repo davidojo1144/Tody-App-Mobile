@@ -21,6 +21,20 @@ export default function welcome() {
             resizeMode='contain'/>
             <Text className='text-xl text-white font-medium'>Continue with email</Text>
         </TouchableOpacity>
+
+        <View className='flex flex-row gap-2 items-center mt-5'>
+            <View className='border border-gray-300 w-[35%] '></View>
+            <Text className='text-md text-gray-500 fomt-thin'>or continue with</Text>
+            <View className='border border-gray-300 w-[35%] '></View>
+        </View>
+
+        <View>
+            <TouchableOpacity>
+                <Image
+                source={require("../assets/images/Message.png")}
+                resizeMode='contain'/>
+            </TouchableOpacity>
+        </View>
     </SafeAreaView>
   )
 }
