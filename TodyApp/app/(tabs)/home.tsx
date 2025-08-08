@@ -1,7 +1,7 @@
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
-import { Ionicons } from "@expo/vector-icons"; // For the gear and plus icons
+import { Ionicons } from "@expo/vector-icons"; 
 import "../../global.css";
 
 export default function Home() {
@@ -28,7 +28,7 @@ export default function Home() {
         </TouchableOpacity>
       </View>
 
-      <View className="p-4 bg-gray-50 rounded-lg">
+      <View className="p-4 bg-gray-50 rounded-lg flex flex-row items-center justify-between">
         <Text className="text-gray-500 text-md">Add your task</Text>
         <Text className="text-gray-400 text-sm mt-1">Today, {new Date().toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric", year: "numeric" })}</Text>
       </View>
