@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "../global.css";
 import { useRouter } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function ChooseTheme() {
   const router = useRouter();
@@ -22,13 +23,13 @@ export default function ChooseTheme() {
 
   const handleOpenTodyapp = async () => {
     if (!selectedTheme) {
-      return; // Prevent navigation if no theme is selected
+      return; 
     }
     setIsLoading(true);
     try {
-      // Optionally store the selected theme in AsyncStorage
+      
       await AsyncStorage.setItem("selectedTheme", selectedTheme);
-      router.push("/todyapp"); // Navigate to Todyapp screen
+      router.push("(tabs)"); 
     } catch (err) {
       console.error("Error saving theme:", err);
     } finally {
