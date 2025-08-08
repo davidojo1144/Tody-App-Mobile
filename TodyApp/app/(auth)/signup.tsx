@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import "../../global.css";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { formData } from "@/types/type";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -16,6 +16,23 @@ export default function Login() {
   const [error, setError] = useState<string | null>(null);
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    // Create an async function to check for token
+    const checkToken = async () => {
+      try {
+        const token = await AsyncStorage.getItem("authToken");
+        if (token) {
+          router.push("/chooseTheme");
+        }
+      } catch (err) {
+        console.error("Error checking token:", err);
+      }
+    };
+
+    checkToken();
+
+  }, []); 
 
   const handleLogin = async () => {
     try {
@@ -46,7 +63,7 @@ export default function Login() {
     } catch (err: any) {
       console.error("Error details:", err);
       setError(err.message || "An error occurred");
-      setIsLoading(false); 
+      setIsLoading(false);
     }
   };
 
@@ -70,7 +87,7 @@ export default function Login() {
             value={formData.username}
             onChangeText={(text) => setFormData({ ...formData, username: text })}
             autoCapitalize="none"
-            editable={!isLoading} 
+            editable={!isLoading}
           />
         </View>
 
@@ -85,7 +102,7 @@ export default function Login() {
               placeholderTextColor="gray"
               value={formData.password}
               onChangeText={(text) => setFormData({ ...formData, password: text })}
-              editable={!isLoading} 
+              editable={!isLoading}
             />
             <TouchableOpacity
               onPress={() => setIsPasswordVisible(!isPasswordVisible)}
@@ -95,7 +112,7 @@ export default function Login() {
                 top: "50%",
                 transform: [{ translateY: -12 }],
               }}
-              disabled={isLoading} 
+              disabled={isLoading}
             >
               <Ionicons
                 name={isPasswordVisible ? "eye-outline" : "eye-off-outline"}
@@ -112,7 +129,7 @@ export default function Login() {
           isLoading ? "opacity-50" : ""
         }`}
         onPress={handleLogin}
-        disabled={isLoading} 
+        disabled={isLoading}
       >
         {isLoading ? (
           <ActivityIndicator size="large" color="#ffffff" />
