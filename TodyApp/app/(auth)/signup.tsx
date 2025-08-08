@@ -42,7 +42,7 @@ export default function Login() {
       await AsyncStorage.setItem("authToken", data.token);
       console.log("Login successful:", data);
       setIsLoading(false);
-      //router.push("/home");
+      router.push("/chooseTheme");
     } catch (err: any) {
       console.error("Error details:", err);
       setError(err.message || "An error occurred");
