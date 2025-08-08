@@ -6,8 +6,8 @@ import "../global.css";
 
 export default function onboarding2() {
   return (
-    <View>
-      <Text>onboarding2</Text>
-    </View>
+    <SafeAreaView className="flex-1 bg-white" edges={["top", "left", "right"]}>
+      
+    </SafeAreaView>
   )
 }
