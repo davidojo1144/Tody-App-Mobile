@@ -33,6 +33,12 @@ export default function Login() {
   }, []);
 
   const handleLogin = async () => {
+    // Validate inputs
+    if (!formData.username.trim() || !formData.password.trim()) {
+      setError("Please enter both username and password");
+      return;
+    }
+
     try {
       setError(null);
       setIsLoading(true);
@@ -42,19 +48,19 @@ export default function Login() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username: formData.username,
-          password: formData.password,
+          username: formData.username.trim(),
+          password: formData.password.trim(),
           expiresInMins: 30,
         }),
       });
 
       const data = await response.json();
+      console.log("API response:", data); // Debug: Log full response
 
       if (!response.ok) {
         throw new Error(data.message || "Login failed");
       }
 
-      // Check if token exists before storing
       if (!data.token) {
         throw new Error("No token received from server");
       }
