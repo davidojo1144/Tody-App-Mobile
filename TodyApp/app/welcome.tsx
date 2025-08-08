@@ -1,8 +1,11 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { useRouter } from 'expo-router'
 
 export default function welcome() {
+    const router = useRouter()
+
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
         <View className='flex flex-row items-center gap-2 px-14 mt-10 mb-10'>
@@ -28,18 +31,18 @@ export default function welcome() {
             <View className='border border-gray-300 w-[35%] '></View>
         </View>
 
-        <View className='flex flex-row gap-3 mt-10'>
-            <TouchableOpacity className='flex flex-row justify-center items-center gap-3 bg-gray-200 py-3 rounded-2xl w-[45%]'>
+        <View className='flex flex-row gap-3 mt-5'>
+            <TouchableOpacity className='flex flex-row justify-center items-center gap-3 bg-gray-100 py-3 rounded-2xl w-[45%]'>
                 <Image
                 source={require("../assets/images/facebook.png")}
                 resizeMode='contain'/>
                 <Text className='text-xl text-black font-medium'>Facebook</Text>
             </TouchableOpacity>
-            <TouchableOpacity className='flex flex-row justify-center items-center gap-3 bg-gray-200 py-3 rounded-2xl w-[45%]'>
+            <TouchableOpacity className='flex flex-row justify-center items-center gap-3 bg-gray-100 py-3 rounded-2xl w-[45%]'>
                 <Image
                 source={require("../assets/images/google.png")}
                 resizeMode='contain'/>
-                <Text className='text-xl text-black font-medium'>Googlek</Text>
+                <Text className='text-xl text-black font-medium'>Google</Text>
             </TouchableOpacity>
         </View>
     </SafeAreaView>
