@@ -29,7 +29,7 @@ export default function ChooseTheme() {
     try {
       
       await AsyncStorage.setItem("selectedTheme", selectedTheme);
-      router.push("(tabs)"); 
+      router.push("/(tabs)/home"); 
     } catch (err) {
       console.error("Error saving theme:", err);
     } finally {
