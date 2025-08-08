@@ -3,9 +3,15 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import "../../global.css";
 import { useRouter } from "expo-router";
 import { Ionicons } from '@expo/vector-icons'
+import { useState } from "react";
+import { formData } from "@/types/type";
 
 export default function signup() {
     const router = useRouter()
+    const [formData, setFormData] = useState<formData>({
+      username: "",
+      password: ""
+    })
 
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
