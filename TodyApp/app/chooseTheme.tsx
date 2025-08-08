@@ -39,8 +39,8 @@ export default function ChooseTheme() {
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
       <View className="flex-1 justify-center items-center">
-        <Text className="text-2xl font-medium text-center mb-4">Create to do list</Text>
-        <Text className="text-md text-gray-500 text-center mb-6">
+        <Text className="text-3xl font-medium text-center mb-4">Create to do list</Text>
+        <Text className="text-xl font-light text-gray-500 text-center mb-6">
           Choose your to do list color theme:
         </Text>
 
@@ -68,7 +68,7 @@ export default function ChooseTheme() {
         ))}
 
         <TouchableOpacity
-          className={`w-full py-4 rounded-lg justify-center mt-40 items-center ${
+          className={`w-full py-4 rounded-2xl justify-center mt-40 items-center ${
             !selectedTheme || isLoading ? "bg-gray-400" : "bg-[#26A69A]"
           }`}
           onPress={handleOpenTodyapp}
