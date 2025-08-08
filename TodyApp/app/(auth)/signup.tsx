@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import "../../global.css";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { formData } from "@/types/type";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -17,20 +17,6 @@ export default function Login() {
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    const checkToken = async () => {
-      try {
-        const token = await AsyncStorage.getItem("authToken");
-        if (token) {
-          router.push("/chooseTheme");
-        }
-      } catch (err) {
-        console.error("Error checking token:", err);
-      }
-    };
-
-    checkToken();
-  }, []);
 
   const handleLogin = async () => {
     if (!formData.username.trim() || !formData.password.trim()) {
