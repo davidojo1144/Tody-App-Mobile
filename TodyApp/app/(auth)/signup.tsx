@@ -18,7 +18,6 @@ export default function Login() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    // Create an async function to check for token
     const checkToken = async () => {
       try {
         const token = await AsyncStorage.getItem("authToken");
@@ -31,8 +30,7 @@ export default function Login() {
     };
 
     checkToken();
-
-  }, []); 
+  }, []);
 
   const handleLogin = async () => {
     try {
@@ -54,6 +52,11 @@ export default function Login() {
 
       if (!response.ok) {
         throw new Error(data.message || "Login failed");
+      }
+
+      // Check if token exists before storing
+      if (!data.token) {
+        throw new Error("No token received from server");
       }
 
       await AsyncStorage.setItem("authToken", data.token);
