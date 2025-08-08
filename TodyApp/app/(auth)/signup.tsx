@@ -33,7 +33,6 @@ export default function Login() {
   }, []);
 
   const handleLogin = async () => {
-    // Validate inputs
     if (!formData.username.trim() || !formData.password.trim()) {
       setError("Please enter both username and password");
       return;
@@ -55,17 +54,18 @@ export default function Login() {
       });
 
       const data = await response.json();
-      console.log("API response:", data); // Debug: Log full response
+      //console.log("API response:", data); 
 
       if (!response.ok) {
         throw new Error(data.message || "Login failed");
       }
 
-      if (!data.token) {
-        throw new Error("No token received from server");
+    
+      if (!data.accessToken) {
+        throw new Error("No access token received from server");
       }
 
-      await AsyncStorage.setItem("authToken", data.token);
+      await AsyncStorage.setItem("authToken", data.accessToken);
       console.log("Login successful:", data);
       setIsLoading(false);
       router.push("/chooseTheme");
