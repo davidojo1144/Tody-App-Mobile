@@ -7,7 +7,7 @@ import { useState } from "react";
 import { formData } from "@/types/type";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function Login() {
+export default function signup() {
   const router = useRouter();
   const [formData, setFormData] = useState<formData>({
     username: "",
