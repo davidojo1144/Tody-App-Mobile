@@ -21,7 +21,7 @@ export default function Project() {
           <Ionicons name="help-circle-outline" size={20} color="#757575" />
           <Text className="text-gray-700 ml-2">Instructions For Use</Text>
         </TouchableOpacity>
-        <TouchableOpacity className="flex-row items-center bg-gray-100 p-3 rounded-lg mb-2">
+        <TouchableOpacity className="flex-row items-center bg-gray-100 p-3 rounded-lg mb-2" onPress={() => router.push("/(project)/tryBoard")}>
           <Ionicons name="grid-outline" size={20} color="#757575" />
           <Text className="text-gray-700 ml-2">Try Boards</Text>
           <Ionicons name="heart-outline" size={16} color="#B0BEC5" className="ml-auto mr-2" />
