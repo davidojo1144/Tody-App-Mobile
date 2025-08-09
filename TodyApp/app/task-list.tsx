@@ -1,15 +1,15 @@
 import { Text, View, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter } from "expo-router"; // For navigation
-import { useEffect, useState } from "react"; // For state and effect management
-import AsyncStorage from "@react-native-async-storage/async-storage"; // For task persistence
+import { useRouter } from "expo-router"; 
+import { useEffect, useState } from "react"; 
+import AsyncStorage from "@react-native-async-storage/async-storage"; 
 import "../global.css";
 
 export default function Tasklist() {
   const router = useRouter();
-  const [tasks, setTasks] = useState<string[]>([]); // State to hold tasks
+  const [tasks, setTasks] = useState<string[]>([]); 
 
-  // Load tasks from AsyncStorage when the component mounts
+  
   useEffect(() => {
     const loadTasks = async () => {
       try {
