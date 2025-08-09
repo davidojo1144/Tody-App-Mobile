@@ -2,12 +2,17 @@ import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import "../../global.css";
+import { useRouter } from "expo-router";
 
 export default function Filter() {
+  const router = useRouter()
+
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
       <View className="flex-row justify-between items-center mb-6">
-        <Ionicons name="chevron-back" size={24} color="#000" />
+         <TouchableOpacity onPress={() => router.back()}>
+          <Ionicons name="chevron-back" size={24} color="#000" />
+        </TouchableOpacity>
         <Text className="text-3xl font-medium">Filter & Labels</Text>
         <Ionicons name="search" size={24} color="#000" />
       </View>

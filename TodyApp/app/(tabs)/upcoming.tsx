@@ -3,6 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useState, useEffect } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import "../../global.css";
+import { useRouter } from "expo-router";
 
 export default function Upcoming() {
   const [todos, setTodos] = useState<any>([]);
@@ -10,6 +11,7 @@ export default function Upcoming() {
   const [currentDay, setCurrentDay] = useState(new Date().getDate());
   const [currentMonth, setCurrentMonth] = useState(new Date().toLocaleString('en-us', { month: 'long' }));
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const router = useRouter()
 
   useEffect(() => {
     fetch('https://dummyjson.com/todos?limit=10')
@@ -49,7 +51,9 @@ export default function Upcoming() {
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
       <View className="flex-row justify-between items-center mb-6">
-        <Ionicons name="chevron-back" size={24} color="#000" />
+        <TouchableOpacity onPress={() => router.back()}>
+          <Ionicons name="chevron-back" size={24} color="#000" />
+        </TouchableOpacity>
         <Text className="text-3xl font-medium">Upcoming</Text>
         <Ionicons name="search" size={24} color="#000" />
       </View>
