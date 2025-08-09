@@ -2,7 +2,7 @@ import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage"; 
 import "../../global.css";
 
@@ -37,6 +37,9 @@ export default function Home() {
     setIsAddingTask(false); 
   };
 
+    
+
+
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
       <View className="flex-row justify-between items-center mb-6">
@@ -46,7 +49,7 @@ export default function Home() {
             Best platform for creating to-do lists
           </Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity >
           <Ionicons name="settings-outline" size={24} color="#757575" />
         </TouchableOpacity>
       </View>
