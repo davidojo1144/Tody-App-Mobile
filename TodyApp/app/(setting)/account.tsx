@@ -1,8 +1,8 @@
-import { Text, View, TouchableOpacity, TextInput, Image, Switch } from "react-native";
+import { Text, View, TouchableOpacity, TextInput} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../../global.css";
 
 export default function Account() {
@@ -14,7 +14,7 @@ export default function Account() {
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
       <View className="flex-row gap-28 items-center mb-6">
         <TouchableOpacity>
-           <Ionicons name="chevron-back" size={24} color="#000" onPress={() => router.back()} />
+          <Ionicons name="chevron-back" size={24} color="#000" onPress={() => router.back()} />
         </TouchableOpacity>
         <Text className="text-2xl font-medium">Account</Text>
       </View>
