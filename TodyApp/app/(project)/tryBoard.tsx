@@ -6,8 +6,8 @@ import "../../global.css";
 
 export default function tryBoard() {
   return (
-    <View>
-      <Text>tryBoard</Text>
-    </View>
+    <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
+
+    </SafeAreaView>
   )
 }
