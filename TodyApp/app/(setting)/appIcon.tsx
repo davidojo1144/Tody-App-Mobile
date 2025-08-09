@@ -10,7 +10,7 @@ export default function AppIcon() {
   const [selectedIcon, setSelectedIcon] = useState(null);
 
   const icons = [
-    { color: "#EF5350", selected: true }, 
+    { color: "#EF5350", selected: false }, 
     { color: "#1976D2" }, 
     { color: "#388E3C" }, 
     { color: "#F57C00" }, 
@@ -29,7 +29,9 @@ export default function AppIcon() {
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
       <View className="flex-row gap-28 items-center mb-6">
-        <Ionicons name="chevron-back" size={24} color="#000" onPress={() => router.back()} />
+        <TouchableOpacity onPress={() => router.back()} >
+          <Ionicons name="chevron-back" size={24} color="#000" />
+        </TouchableOpacity>
         <Text className="text-2xl font-medium">App Icon</Text>
       </View>
 
