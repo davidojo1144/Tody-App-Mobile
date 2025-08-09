@@ -1,30 +1,40 @@
-import { Text, View, Image, TouchableOpacity, TextInput } from "react-native";
+import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter, useLocalSearchParams } from "expo-router"; // Added useLocalSearchParams for potential query params
+import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { useState } from "react"; // Added for state management
+import { useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage"; 
 import "../../global.css";
 
 export default function Home() {
   const router = useRouter();
-  const [isAddingTask, setIsAddingTask] = useState(false); // Toggle task input visibility
-  const [taskText, setTaskText] = useState(""); // Store the typed task
-  const [tasks, setTasks] = useState<string[]>([]); // Store added tasks
+  const [isAddingTask, setIsAddingTask] = useState<boolean>(false);
+  const [taskText, setTaskText] = useState<string>(""); 
 
   const handleAddTask = () => {
-    if (isAddingTask && taskText.trim()) {
-      setTasks([...tasks, taskText.trim()]); // Add new task to the list
-      setTaskText(""); // Clear input
-    }
-    setIsAddingTask(!isAddingTask); // Toggle input visibility
+    setIsAddingTask(true); 
   };
 
-  const handleSaveTask = () => {
-    if (taskText.trim()) {
-      setTasks([...tasks, taskText.trim()]); // Save task
-      setTaskText(""); // Clear input
-      setIsAddingTask(false); // Hide input
+  const handleSaveTask = async () => {
+    if (!taskText.trim()) return; 
+
+    try {
+      const existingTasks = await AsyncStorage.getItem("tasks");
+      const tasks = existingTasks ? JSON.parse(existingTasks) : [];
+      tasks.push(taskText.trim());
+      await AsyncStorage.setItem("tasks", JSON.stringify(tasks));
+
+      setTaskText("");
+      setIsAddingTask(false);
+      router.push("/task-list");
+    } catch (err) {
+      console.error("Error saving task:", err);
     }
+  };
+
+  const handleCancelTask = () => {
+    setTaskText("");
+    setIsAddingTask(false); 
   };
 
   return (
@@ -57,10 +67,7 @@ export default function Home() {
           <View className="flex-row justify-end gap-2">
             <TouchableOpacity
               className="px-4 py-2 bg-gray-200 rounded-lg"
-              onPress={() => {
-                setTaskText("");
-                setIsAddingTask(false);
-              }}
+              onPress={handleCancelTask}
             >
               <Text className="text-gray-700">Cancel</Text>
             </TouchableOpacity>
@@ -86,16 +93,6 @@ export default function Home() {
           Today, {new Date().toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric", year: "numeric" })}
         </Text>
       </View>
-
-      {tasks.length > 0 && (
-        <View className="mt-4">
-          {tasks.map((task, index) => (
-            <Text key={index} className="text-black text-md mb-2">
-              {task}
-            </Text>
-          ))}
-        </View>
-      )}
     </SafeAreaView>
   );
 }
