@@ -13,7 +13,9 @@ export default function onboarding3() {
         <TouchableOpacity onPress={()=> router.back()}>
           <Ionicons  name="arrow-back-outline" size={28} color="teal" />
         </TouchableOpacity>
-         <Text className="text-teal-400 text-right text-xl font-medium" onPress={() => router.push("/signup")}>Skip</Text>
+         <TouchableOpacity>
+           <Text className="text-teal-400 text-right text-xl font-medium" onPress={() => router.push("/signup")}>Skip</Text>
+        </TouchableOpacity>
       </View>
       <Image
       resizeMode="contain"

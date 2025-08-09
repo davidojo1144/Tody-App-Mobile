@@ -32,7 +32,7 @@ export default function ProfileSetting() {
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
       <View className="flex-row justify-between items-center mb-6">
         <Ionicons name="chevron-back" size={24} color="#000" onPress={() => router.back()} />
-        <Text className="text-3xl font-medium">Settings</Text>
+        <Text className="text-2xl font-medium">Settings</Text>
         <Ionicons name="search" size={24} color="#000" />
       </View>
 
@@ -53,25 +53,25 @@ export default function ProfileSetting() {
       )}
 
       <View>
-        <TouchableOpacity className="flex-row items-center py-4 border-b border-gray-200">
+        <TouchableOpacity className="flex-row items-center py-4 border-b border-gray-200" onPress={()=> router.push("/(setting)/account")}>
           <Ionicons name="person-outline" size={20} color="#757575" />
           <Text className="ml-4 text-gray-700 flex-1">Account</Text>
           <Ionicons name="chevron-forward" size={20} color="#757575" />
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center py-4 border-b border-gray-200">
+        <TouchableOpacity className="flex-row items-center py-4 border-b border-gray-200" onPress={()=> router.push("/(setting)/theme")}>
           <Ionicons name="color-palette-outline" size={20} color="#757575" />
           <Text className="ml-4 text-gray-700 flex-1">Theme</Text>
           <Ionicons name="chevron-forward" size={20} color="#757575" />
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center py-4 border-b border-gray-200">
+        <TouchableOpacity className="flex-row items-center py-4 border-b border-gray-200" onPress={()=> router.push("/(setting)/appIcon")}>
           <Ionicons name="apps-outline" size={20} color="#757575" />
           <Text className="ml-4 text-gray-700 flex-1">App Icon</Text>
           <Ionicons name="chevron-forward" size={20} color="#757575" />
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center py-4 border-b border-gray-200">
+        <TouchableOpacity className="flex-row items-center py-4 border-b border-gray-200" onPress={()=> router.push("/(setting)/productivity")}>
           <Ionicons name="bar-chart-outline" size={20} color="#757575" />
           <Text className="ml-4 text-gray-700 flex-1">Productivity</Text>
           <Ionicons name="chevron-forward" size={20} color="#757575" />
