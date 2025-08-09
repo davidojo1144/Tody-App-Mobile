@@ -23,18 +23,20 @@ export default function manageProject() {
       />
 
       <View className="mt-6">
-        <TouchableOpacity className="flex-row items-center py-3">
+        <TouchableOpacity className="flex-row items-center gap-3 py-3">
           <Ionicons name="water-outline" size={20} color="#757575" />
           <View>
-            <Text className="ml-3 text-gray-700">Color</Text>
-            <Text className="ml-auto text-gray-500">Charcoal</Text>
+            <Text className=" text-gray-700">Color</Text>
+            <Text className=" text-gray-500">Charcoal</Text>
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center py-3 border-t border-gray-200">
+        <TouchableOpacity className="flex-row items-center gap-3 py-3 border-t border-gray-200">
           <Ionicons name="people-outline" size={20} color="#757575" />
-          <Text className="ml-3 text-gray-700">Collaborators</Text>
-          <Text className="ml-auto text-gray-500">no collaborators</Text>
+          <View>
+            <Text className=" text-gray-700">Collaborators</Text>
+            <Text className=" text-gray-500">no collaborators</Text>
+          </View>
         </TouchableOpacity>
 
         <View className="flex-row items-center py-3 border-t border-gray-200">
@@ -49,7 +51,10 @@ export default function manageProject() {
         </View>
       </View>
 
-      <Text className="text-lg text-gray-700 mt-6 mb-4">View</Text>
+      <TouchableOpacity className="flex-row items-center gap-3 py-3 border-t border-gray-200 pb-10">
+          <Ionicons name="people-outline" size={20} color="#757575" />
+          <Text className=" text-gray-700">View</Text>
+      </TouchableOpacity>
 
       <View className="flex-row justify-between">
         <TouchableOpacity className="border-2 border-[#26A69A] p-4 rounded-lg w-[48%] items-center">
