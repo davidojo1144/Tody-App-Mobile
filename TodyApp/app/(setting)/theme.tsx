@@ -43,7 +43,7 @@ export default function Theme() {
         </View>
       ))}
 
-      <TouchableOpacity className="bg-[#26A69A] py-3 rounded-lg items-center mb-5 mt-auto">
+      <TouchableOpacity className="bg-[#26A69A] py-4 rounded-2xl items-center mb-5 mt-auto">
         <Text className="text-white text-lg">More Theme</Text>
       </TouchableOpacity>
     </SafeAreaView>
