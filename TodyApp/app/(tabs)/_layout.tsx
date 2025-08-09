@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
-import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
+import { Ionicons } from '@expo/vector-icons';
+import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 
 
 export default function TabsLayout() {

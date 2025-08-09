@@ -10,7 +10,9 @@ export default function Project() {
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
       <View className="flex-row justify-between items-center mb-6">
-        <Ionicons name="chevron-back" size={24} color="#000" onPress={() => router.back()} />
+        <TouchableOpacity onPress={() => router.back()}>
+          <Ionicons name="chevron-back" size={24} color="#000"  />
+        </TouchableOpacity>
         <Text className="text-2xl font-medium">Project</Text>
         <Ionicons name="search" size={24} color="#000" />
       </View>
