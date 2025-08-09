@@ -11,7 +11,7 @@ export default function RootLayout() {
       try {
         const token = await AsyncStorage.getItem("authToken");
         if (token) {
-          router.replace("/(tabs)/home");
+          router.replace('/(project)/instructions');
         } else {
           router.replace("/");
         }

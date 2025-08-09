@@ -1,4 +1,4 @@
-import { Text, View, TouchableOpacity, TextInput } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
@@ -17,7 +17,7 @@ export default function Project() {
 
       <View className="mb-6">
         <Text className="text-xl text-black mb-2">Filter your task</Text>
-        <TouchableOpacity className="flex-row items-center bg-gray-100 p-3 rounded-lg mb-2">
+        <TouchableOpacity className="flex-row items-center bg-gray-100 p-3 rounded-lg mb-2" onPress={() => router.push("/(project)/instructions")}>
           <Ionicons name="help-circle-outline" size={20} color="#757575" />
           <Text className="text-gray-700 ml-2">Instructions For Use</Text>
         </TouchableOpacity>
