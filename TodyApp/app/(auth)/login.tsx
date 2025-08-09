@@ -1,4 +1,4 @@
-import { Text, View, Image, TouchableOpacity, TextInput } from "react-native";
+import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "../../global.css";
 import { useRouter } from "expo-router";
