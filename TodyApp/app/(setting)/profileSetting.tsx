@@ -21,7 +21,7 @@ export default function ProfileSetting() {
 
   const handleLogout = async () => {
     try {
-      await AsyncStorage.removeItem('userToken');
+      await AsyncStorage.removeItem("authToken");
       router.push('/'); 
     } catch (error) {
       console.log('Error logging out:', error);
