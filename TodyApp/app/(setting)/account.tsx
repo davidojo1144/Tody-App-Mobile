@@ -41,12 +41,12 @@ export default function Account() {
 
       <View className="mb-6">
         <Text className="text-xl text-black mb-2">Password</Text>
-        <TouchableOpacity className="bg-gray-100 p-3 rounded-lg items-center">
+        <TouchableOpacity className="bg-white border border-gray-300 p-5 rounded-lg items-center">
           <Text className="text-gray-500">Change Password</Text>
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity className="bg-[#26A69A] py-3 rounded-lg items-center mt-auto">
+      <TouchableOpacity className="bg-[#26A69A] py-4 rounded-2xl mb-5 items-center mt-auto">
         <Text className="text-white text-lg">Save Changes</Text>
       </TouchableOpacity>
     </SafeAreaView>
