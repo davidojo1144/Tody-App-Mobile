@@ -10,30 +10,30 @@ export default function AppIcon() {
   const [selectedIcon, setSelectedIcon] = useState(null);
 
   const icons = [
-    { color: "#EF5350", selected: true }, // Red with checkmark
-    { color: "#1976D2" }, // Blue
-    { color: "#388E3C" }, // Green
-    { color: "#F57C00" }, // Orange
-    { color: "#000000" }, // Black
-    { color: "#F06292" }, // Pink
-    { color: "#FFCA28" }, // Yellow
-    { color: "#42A5F5" }, // Light Blue
-    { color: "#AB47BC" }, // Purple
-    { color: "#26A69A" }, // Teal
-    { color: "#40C4FF" }, // Cyan
-    { color: "#EF5350" }, // Red
-    { color: "#D81B60" }, // Pink
-    { color: "#F4511E" }, // Orange
+    { color: "#EF5350", selected: true }, 
+    { color: "#1976D2" }, 
+    { color: "#388E3C" }, 
+    { color: "#F57C00" }, 
+    { color: "#000000" }, 
+    { color: "#F06292" }, 
+    { color: "#FFCA28" }, 
+    { color: "#42A5F5" }, 
+    { color: "#AB47BC" }, 
+    { color: "#26A69A" }, 
+    { color: "#40C4FF" }, 
+    { color: "#EF5350" }, 
+    { color: "#D81B60" }, 
+    { color: "#F4511E" }, 
   ];
 
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
-      <View className="flex-row justify-between items-center mb-6">
+      <View className="flex-row gap-28 items-center mb-6">
         <Ionicons name="chevron-back" size={24} color="#000" onPress={() => router.back()} />
-        <Text className="text-3xl font-medium">App Icon</Text>
+        <Text className="text-2xl font-medium">App Icon</Text>
       </View>
 
-      <View className="flex-1 justify-center">
+      <View className="justify-center">
         <View className="flex-row flex-wrap justify-around mb-6">
           {icons.map((icon, index) => (
             <TouchableOpacity
