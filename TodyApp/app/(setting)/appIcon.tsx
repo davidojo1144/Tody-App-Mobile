@@ -52,7 +52,7 @@ export default function AppIcon() {
         </View>
       </View>
 
-      <TouchableOpacity className="bg-[#26A69A] py-3 rounded-lg items-center mt-auto">
+      <TouchableOpacity className="bg-[#26A69A] py-4 rounded-2xl mb-4 items-center mt-auto">
         <Text className="text-white text-lg">Save Icon</Text>
       </TouchableOpacity>
     </SafeAreaView>
