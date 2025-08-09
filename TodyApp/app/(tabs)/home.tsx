@@ -97,9 +97,9 @@ export default function Home() {
         </Text>
       </View>
 
-      <TouchableOpacity className="pt-10 flex flex-row items-center gap-2">
+      <TouchableOpacity className="pt-10 flex flex-row items-center gap-2" onPress={() => router.push("/(setting)/profileSetting")}>
         <Text className="text-2xl font-medium">Profile Setting</Text>
-        <Ionicons name="settings-outline" size={30} color="black" />
+        <Ionicons name="settings-outline" size={24} color="black" />
       </TouchableOpacity>
     </SafeAreaView>
   );
