@@ -94,7 +94,7 @@ export default function ProfileSetting() {
           <Ionicons name="chevron-forward" size={20} color="#757575" />
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center py-4 border-b border-gray-200">
+        <TouchableOpacity className="flex-row items-center py-4 border-b border-gray-200" onPress={()=> router.push("/(setting)/helpCenter")}>
           <Ionicons name="help-circle-outline" size={20} color="#757575" />
           <Text className="ml-4 text-gray-700 flex-1">Help Center</Text>
           <Ionicons name="chevron-forward" size={20} color="#757575" />
