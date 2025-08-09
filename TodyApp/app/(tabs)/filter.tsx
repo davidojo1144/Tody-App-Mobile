@@ -18,7 +18,7 @@ export default function Filter() {
       </View>
 
       <View className="mb-6">
-        <Text className="text-lg text-gray-500 mb-2">Filter your task</Text>
+        <Text className="text-xl text-black font-medium mb-2">Filter your task</Text>
         <TouchableOpacity className="flex-row items-center bg-gray-100 p-3 rounded-lg mb-2">
           <Ionicons name="filter" size={20} color="#757575" />
           <Text className="text-gray-700 ml-2">Assigned to me</Text>
@@ -40,7 +40,7 @@ export default function Filter() {
       </View>
 
       <View>
-        <Text className="text-lg text-gray-500 mb-2">Labels</Text>
+        <Text className="text-xl text-black font-medium mb-2">Labels</Text>
         <TouchableOpacity className="flex-row items-center bg-gray-100 p-3 rounded-lg mb-2">
           <Ionicons name="pricetag" size={20} color="#757575" />
           <Text className="text-gray-700 ml-2">Masana label</Text>
