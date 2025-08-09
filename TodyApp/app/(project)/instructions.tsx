@@ -10,7 +10,9 @@ export default function Instructions() {
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
       <View className="flex-row gap-28 items-center mb-6">
-        <Ionicons name="chevron-back" size={24} color="#000" onPress={() => router.back()} />
+        <TouchableOpacity>
+            <Ionicons name="chevron-back" size={24} color="#000" onPress={() => router.back()} />
+        </TouchableOpacity>
         <Text className="text-2xl font-medium">Instructions</Text>
       </View>
 
