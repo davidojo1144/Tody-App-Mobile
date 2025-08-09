@@ -3,6 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { useState, useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import "../../global.css";
 
 export default function ProfileSetting() {
@@ -18,13 +19,20 @@ export default function ProfileSetting() {
 
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
+  const handleLogout = async () => {
+    try {
+      await AsyncStorage.removeItem('userToken');
+      router.push('/'); 
+    } catch (error) {
+      console.log('Error logging out:', error);
+    }
+  };
+
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
       <View className="flex-row justify-between items-center mb-6">
-        <TouchableOpacity>
-          <Ionicons name="chevron-back" size={24} onPress={() => router.back()} />
-        </TouchableOpacity>
-        <Text className="text-2xl font-medium">Settings</Text>
+        <Ionicons name="chevron-back" size={24} color="#000" onPress={() => router.back()} />
+        <Text className="text-3xl font-medium">Settings</Text>
         <Ionicons name="search" size={24} color="#000" />
       </View>
 
@@ -92,7 +100,7 @@ export default function ProfileSetting() {
           <Ionicons name="chevron-forward" size={20} color="#757575" />
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center py-4">
+        <TouchableOpacity className="flex-row items-center py-4" onPress={handleLogout}>
           <Ionicons name="log-out-outline" size={20} color="#757575" />
           <Text className="ml-4 text-gray-700 flex-1">Log Out</Text>
           <Ionicons name="chevron-forward" size={20} color="#757575" />
