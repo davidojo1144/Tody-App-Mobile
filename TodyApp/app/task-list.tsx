@@ -24,9 +24,16 @@ export default function Tasklist() {
     loadTasks();
   }, []);
 
-  const handleDelete = async () => {
-    await AsyncStorage.clear()
-  }
+  
+  const handleDeleteTask = async (indexToDelete: number) => {
+    try {
+      const updatedTasks = tasks.filter((_, index) => index !== indexToDelete);
+      setTasks(updatedTasks);
+      await AsyncStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    } catch (err) {
+      console.error("Error deleting task:", err);
+    }
+  };
 
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
@@ -37,8 +44,14 @@ export default function Tasklist() {
       {tasks.length > 0 ? (
         <View>
           {tasks.map((task, index) => (
-            <View key={index} className="p-5 bg-gray-50 rounded-lg mb-2">
+            <View key={index} className="p-5 bg-gray-50 rounded-lg mb-2 flex-row justify-between items-center">
               <Text className="text-black text-md">{task}</Text>
+              <TouchableOpacity
+                className="px-3 py-1 bg-red-500 rounded-lg"
+                onPress={() => handleDeleteTask(index)}
+              >
+                <Text className="text-white text-sm">Delete</Text>
+              </TouchableOpacity>
             </View>
           ))}
         </View>
