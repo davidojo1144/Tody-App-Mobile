@@ -33,7 +33,7 @@ export default function Productivity() {
             />
           </View>
           <Text className="text-xl font-medium mt-2">{`${user.firstName} ${user.lastName}`}</Text>
-          <Text className="text-gray-500">@{user.username}</Text>
+          <Text className="text-gray-500 mt-2">@{user.username}</Text>
         </View>
       )}
 
