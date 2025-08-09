@@ -20,8 +20,10 @@ export default function Theme() {
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
       <View className="flex-row gap-28 items-center mb-6">
-        <Ionicons name="chevron-back" size={24} color="#000" onPress={() => router.back()} />
-        <Text className="text-3xl font-medium">Theme</Text>
+        <TouchableOpacity>
+          <Ionicons name="chevron-back" size={24} color="#000" onPress={() => router.back()} />
+        </TouchableOpacity>
+        <Text className="text-2xl font-medium">Theme</Text>
       </View>
 
       {themes.map((theme, index) => (
