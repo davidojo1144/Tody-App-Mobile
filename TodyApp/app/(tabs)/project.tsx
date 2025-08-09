@@ -27,7 +27,7 @@ export default function Project() {
           <Ionicons name="heart-outline" size={16} color="#B0BEC5" className="ml-auto mr-2" />
           <Ionicons name="heart-outline" size={16} color="#B0BEC5" />
         </TouchableOpacity>
-        <TouchableOpacity className="flex-row items-center bg-gray-100 p-3 rounded-lg">
+        <TouchableOpacity className="flex-row items-center bg-gray-100 p-3 rounded-lg" onPress={() => router.push("/(project)/manageProject")}>
           <Ionicons name="settings" size={20} color="#757575" />
           <Text className="text-gray-700 ml-2">Manage Projects</Text>
           <Ionicons name="heart-outline" size={16} color="#B0BEC5" className="ml-auto mr-2" />
