@@ -52,7 +52,7 @@ export default function signup() {
       }
 
       await AsyncStorage.setItem("authToken", data.accessToken);
-      console.log("Login successful:", data);
+      //console.log("Login successful:", data);
       setIsLoading(false);
       router.push("/chooseTheme");
     } catch (err: any) {
@@ -77,7 +77,7 @@ export default function signup() {
           <TextInput
             textContentType="username"
             className="p-5 bg-gray-50 border border-gray-300 rounded-md"
-            placeholder="Enter your username (e.g., emilys)"
+            placeholder="Enter your username"
             placeholderTextColor="gray"
             value={formData.username}
             onChangeText={(text) => setFormData({ ...formData, username: text })}
@@ -93,7 +93,7 @@ export default function signup() {
               textContentType="password"
               secureTextEntry={!isPasswordVisible}
               className="p-5 pr-12 bg-gray-50 border border-gray-300 rounded-md"
-              placeholder="Enter your password (e.g., emilyspass)"
+              placeholder="Enter your password"
               placeholderTextColor="gray"
               value={formData.password}
               onChangeText={(text) => setFormData({ ...formData, password: text })}
