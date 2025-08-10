@@ -1,21 +1,24 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, Text, Image, TouchableOpacity, Dimensions } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useRouter } from 'expo-router'
+
+const { width, height } = Dimensions.get("window"); 
 
 export default function welcome() {
     const router = useRouter()
 
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
-        <View className='flex flex-row items-center gap-2 px-14 mt-10 mb-10'>
-            <Text className='text-black text-3xl font-medium '>Welcome to</Text>
-            <Text className='text-teal-500 text-3xl font-medium '>Todyapp</Text>
+        <View className='flex flex-row items-center gap-2 pl-[20%] mt-10 mb-10'>
+            <Text className='text-black text-2xl font-semibold '>Welcome to</Text>
+            <Text className='text-teal-500 text-2xl font-semibold '>Todyapp</Text>
         </View>
 
         <Image
         source={require("../assets/images/welcome.png")}
         resizeMode='contain'
+        style={{width: width * 0.9, maxHeight: height * 0.4}}
         />
 
         <TouchableOpacity className='bg-teal-500 flex flex-row justify-center items-center gap-3 mx-2  py-4 rounded-2xl' onPress={()=> router.push("/(auth)/login")}>

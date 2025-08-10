@@ -6,7 +6,7 @@ import "../global.css";
 
 export default function Onboarding3() {
   const router = useRouter();
-  const { width, height } = Dimensions.get("window"); // Get screen dimensions
+  const { width, height } = Dimensions.get("window"); 
 
   return (
     <SafeAreaView className="flex-1 p-4 bg-white" edges={["top", "left", "right"]}>
@@ -22,7 +22,7 @@ export default function Onboarding3() {
         <Image
           resizeMode="contain"
           source={require("../assets/images/Onboarding Image2.png")}
-          style={{ width: width * 0.9, maxHeight: height * 0.8 }} // Constrain image size
+          style={{ width: width * 0.9, maxHeight: height * 0.8 }} 
         />
       </View>
       <TouchableOpacity
