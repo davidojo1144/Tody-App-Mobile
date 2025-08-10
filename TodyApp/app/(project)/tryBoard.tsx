@@ -9,11 +9,11 @@ export default function TryBoard() {
 
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
-      <View className="flex-row gap-28 items-center mb-6">
+      <View className="flex-row gap-[20%] items-center mb-6">
          <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="chevron-back" size={24} color="#000"  />
         </TouchableOpacity>
-        <Text className="text-2xl font-medium">Try Boards</Text>
+        <Text className="text-xl font-medium">Try Boards</Text>
       </View>
 
       <View className="mb-6">

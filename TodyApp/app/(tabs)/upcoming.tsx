@@ -54,7 +54,7 @@ export default function Upcoming() {
         <TouchableOpacity onPress={() => router.back()}>
           <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text className="text-2xl font-medium">Upcoming</Text>
+        <Text className="text-xl font-medium">Upcoming</Text>
         <Ionicons name="search" size={24} color="#000" />
       </View>
 

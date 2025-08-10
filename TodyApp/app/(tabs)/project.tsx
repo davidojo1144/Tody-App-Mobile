@@ -13,7 +13,7 @@ export default function Project() {
         <TouchableOpacity onPress={() => router.back()}>
           <Ionicons name="chevron-back" size={24} color="#000"  />
         </TouchableOpacity>
-        <Text className="text-2xl font-medium">Project</Text>
+        <Text className="text-xl font-medium">Project</Text>
         <Ionicons name="search" size={24} color="#000" />
       </View>
 

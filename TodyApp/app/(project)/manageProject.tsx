@@ -9,11 +9,11 @@ export default function manageProject() {
 
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
-      <View className="flex-row gap-24 items-center mb-6">
+      <View className="flex-row gap-[15%] items-center mb-6">
        <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="chevron-back" size={24}  />
         </TouchableOpacity>
-        <Text className="text-2xl font-medium ml-4">Manage Project</Text>
+        <Text className="text-xl font-medium ml-4">Manage Project</Text>
       </View>
 
       <Text className="text-xl text-black mb-2">Name Project</Text>
