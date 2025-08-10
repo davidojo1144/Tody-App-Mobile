@@ -19,22 +19,22 @@ export default function Theme() {
 
   return (
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
-      <View className="flex-row gap-28 items-center mb-6">
+      <View className="flex-row gap-[15%] items-center mb-6">
         <TouchableOpacity onPress={() => router.back()} >
           <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text className="text-2xl font-medium">Theme</Text>
+        <Text className="text-xl font-medium">Theme</Text>
       </View>
 
       {themes.map((theme, index) => (
         <View key={index} className="mb-4">
           <TouchableOpacity
-            className="bg-[#00000000] p-2 rounded-t-lg"
+            className="bg-[#00000000] p-1 rounded-t-md"
             onPress={() => setSelectedTheme(theme.name)}
           >
-            <View className="h-10 bg-[transparent]" style={{ backgroundColor: theme.color }} />
+            <View className="h-7 bg-[transparent]" style={{ backgroundColor: theme.color }} />
           </TouchableOpacity>
-          <View className="bg-white p-4 rounded-b-lg border-l-4 border-gray-200">
+          <View className="bg-white p-3 rounded-b-lg border-l-4 border-gray-200">
             <View className="flex-row items-center">
               <Ionicons name="radio-button-off-outline" size={20} color="#B0BEC5" />
               <Text className="ml-3 text-gray-500">{theme.name}</Text>
