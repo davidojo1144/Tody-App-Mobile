@@ -44,8 +44,8 @@ export default function Home() {
     <SafeAreaView className="flex-1 bg-white p-5" edges={["top", "left", "right"]}>
       <View className="flex-row justify-between items-center mb-6">
         <View>
-          <Text className="text-3xl font-medium">Today</Text>
-          <Text className="text-xl font-light text-gray-500 mt-3">
+          <Text className="text-2xl  font-medium">Today</Text>
+          <Text className="text-md font-light text-gray-500 mt-3">
             Best platform for creating to-do lists
           </Text>
         </View>
@@ -98,8 +98,8 @@ export default function Home() {
       </View>
 
       <TouchableOpacity className="pt-10 flex flex-row items-center gap-2" onPress={() => router.push("/(setting)/profileSetting")}>
-        <Text className="text-2xl font-medium">Profile Setting</Text>
-        <Ionicons name="settings-outline" size={24} color="black" />
+        <Text className="text-xl font-medium">Profile Setting</Text>
+        <Ionicons name="settings-outline" size={20} color="black" />
       </TouchableOpacity>
     </SafeAreaView>
   );

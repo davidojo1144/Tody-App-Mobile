@@ -13,7 +13,7 @@ export default function Filter() {
          <TouchableOpacity onPress={() => router.back()}>
           <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text className="text-2xl font-medium">Filter & Labels</Text>
+        <Text className="text-xl font-medium">Filter & Labels</Text>
         <Ionicons name="search" size={24} color="#000" />
       </View>
 

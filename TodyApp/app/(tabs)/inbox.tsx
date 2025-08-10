@@ -13,7 +13,7 @@ export default function Inbox() {
          <TouchableOpacity onPress={() => router.back()}>
           <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text className="text-2xl font-medium">Inbox</Text>
+        <Text className="text-xl font-medium">Inbox</Text>
         <Ionicons name="search" size={24} color="#000" />
       </View>
 
