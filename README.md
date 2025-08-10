@@ -29,7 +29,7 @@ textexpo start
 Scan the QR code with the Expo Go app on your mobile device, or run on an emulator using a for Android or i for iOS.
 
 
-For login, use the following credentials (hardcoded for demo purposes):
+For login, use the following credentials:
 
 Username: emilys
 Password: emilyspass
